@@ -1,7 +1,14 @@
-import React from "react";
+import Cart from './components/cart/Cart';
+import Products from './components/shop/Products';
+import Layout from './components/layout/Layout';
 
-const App = () => {
-	return <div>App</div>;
-};
+function App() {
+  return (
+    <Layout>
+      <Cart />
+      <Products />
+    </Layout>
+  );
+}
 
 export default App;
