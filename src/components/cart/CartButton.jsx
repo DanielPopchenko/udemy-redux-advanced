@@ -6,6 +6,7 @@ const CartButton = (props) => {
   const cartIsVisible = useSelector((state) => state.ui.cartIsVisible);
 
   const dispatch = useDispatch();
+  const cartState = useSelector((state) => state.cart);
 
   const toggleCartVisibility = () => {
     dispatch(toggle());
@@ -14,7 +15,7 @@ const CartButton = (props) => {
   return (
     <button className={classes.button} onClick={toggleCartVisibility}>
       <span> {cartIsVisible ? 'Hide Cart' : 'Show Cart'}</span>
-      <span className={classes.badge}>1</span>
+      <span className={classes.badge}>{cartState.totalQuantity}</span>
     </button>
   );
 };
